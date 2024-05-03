@@ -1,0 +1,99 @@
+# Atualizar o VI, para melhorar o editor, e terminal instalar:
+vim
+xfce_terminal
+
+# Acertar o usuáio para ter permissão como administrador e sudo
+# Como root, editar o arquivo /etc/group e colocar o seu usuário nos seguintes grupos:
+
+adm:x:4:[USURÁRIO]
+lp:x:7:[USURÁRIO]
+
+# Editar o arquivo /etc/sudoers, inserindo o seu usuário com o seguinte comando:
+
+[USURÁRIO]        ALL=(ALL:ALL) ALL
+
+# Editar o arquivo /etc/apt/sources.list, inclui as linhas:
+
+#Testing
+deb http://ftp.br.debian.org/debian testing main contrib non-free
+deb-src http://ftp.br.debian.org/debian testing main contrib non-free
+
+#Handbrake
+#instalar a key executando:  apt-get install deb-multimedia-keyring 
+deb http://www.deb-multimedia.org wheezy main non-free 
+
+# Sair e salvar o arquivo, executar o comando para KEY:
+apt-get install deb-multimedia-keyring
+apt-get update
+
+# Instalar os seguintes pacotes:
+# Para o Melhor Plugin do Flash para Browsers:
+apt-get install flashplugin-nonfree
+
+# Para descompactar arquivos RAR
+apt-get install unrar-free
+apt-get install unrar
+
+# Caso deseje atualizar o kernel, utilizando o repositório de Tesing.
+# Eu recomendo fazer isso quando algum dos componentes do seu computador não estiver funcionando
+# Corretamente, como placa de video ou audio, no meu caso do Sony VAIO eu fiz...
+# Instalar o kernel desejado, no caso eu instalei a seguinte versão:
+apt-get install linux-image-3.9-1-amd64
+
+# No caso do VAIO, também tive de fazer a instalação do Firmware, instalei o seguinte:
+apt-get install firmware-linux-free
+apt-get install firmware-linux-nonfree
+
+# Se você tem uma impressora HP, instale:
+apt-get install hplip-gui
+
+# Exibirá o aviso de que o Arquivo libsnmp15 será removido, mas tudo bem, manda bala...
+# Apresenta uma tela de Configuração de alguns pacotes, pode manda "Continuar"/ "Confirmar"
+
+# A partir desse ponto não é mais necessário o repositório do Testing, alias eu não recomendo
+# Portanto edite novamente o arquivo /etc/apt/sources.list e comente as duas linhas de repositório Testing:
+
+#deb http://ftp.br.debian.org/debian testing main contrib non-free
+#deb-src http://ftp.br.debian.org/debian testing main contrib non-free
+
+# Agora, para deixar bala instalar os seguintes pacotes,
+# pode ser por apt-get mesmo, ou utilizando um gerenciador de pacotes, 
+# no meu caso utilizei o Synaptics para instalar:
+gparted
+brasero-cdrkit
+unetbootin
+furiusisomount
+htop
+
+#Navegadores
+chrome
+firefox
+vivald
+
+#Midia e Videos
+rhythmbox
+gtkpod
+gtk-recordmydesktop
+nautilus-image-converter
+soundconverter
+sound juicer
+handbrake
+vlc
+winff
+
+# Para compartilhar aquivos com Samba e pelo nautilius
+samba
+nautilus-share
+smbnetfs
+
+# Para desenvolvimento:
+eclipse
+umbrello
+maven2
+git
+
+# Se você tem Wii
+qwbfsmanager
+
+#Para cerveja
+qbrew
